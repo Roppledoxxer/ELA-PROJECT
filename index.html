@@ -63,16 +63,6 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
-/* Navigation Styling */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
-
         @media (min-width: 768px) {
             .container {
                 grid-template-columns: 1fr 1fr;
@@ -181,8 +171,6 @@ button,
     cursor: pointer;
 
     transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
 }
 
 button:hover,
@@ -237,7 +225,7 @@ button:hover,
 
         .nav-button {
             background-color: var(--accent-color);
-            color: #08111f;
+            color: #ffffff;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
@@ -245,7 +233,7 @@ button:hover,
         }
 
         .nav-button:hover {
-            background-color: #f4d97b;
+            background-color: #3e8e41;
         }
 
 body::before {
@@ -274,68 +262,309 @@ body::before {
     <header>
         <h1>MULTI GENRE PROJECT by Matthias Rong</h1>
         <p class="subtitle">A showcase site for my poetry</p>
-        
-        <!-- Main Navigation -->
-        <nav>
-            <a href="index.html" class="nav-button">Home</a>
-            <a href="about.html" class="nav-button">About</a>
-            <a href="poems.html" class="nav-button">Poems</a>
-            <a href="gallery.html" class="nav-button">Gallery</a>
-            <a href="contact.html" class="nav-button">Contact</a>
-        </nav>
     </header>
 
-    <main class="container">
-        <h2>Welcome to My Poetry Portfolio</h2>
-        <p>Explore my multi-genre poetry collection. Use the navigation above to browse through my work, learn about my inspiration, and get in touch!</p>
-        
-        <div style="margin-top: 30px;">
-            <h3>Featured Works</h3>
-            <p>Click on "Poems" to see all my poems, or check out the "Gallery" for visual representations of my work.</p>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <button class="nav-button" id="like-button">Like This Website</button>
+            <button class="nav-button" id="about-button">About</button>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+<div id="like-content" style="display: none;">
+    <h2>Like This Website</h2>
+    <p>Let me know what you think of my poetry!</p>
+    
+    <!-- Add this voting block -->
+    <div style="display: flex; gap: 20px; margin-top: 15px;">
+        <div style="text-align: center;">
+            <button id="btn-like-vote">👍 Like</button>
+            <div style="margin-top: 8px; font-family: sans-serif; font-size: 0.9rem; color: #555;">Likes: <span id="like-count">0</span></div>
         </div>
-
-        <div style="margin-top: 30px;">
-            <div style="display: flex; gap: 20px; margin-top: 15px;">
-                <div style="text-align: center;">
-                    <button id="btn-like-vote">👍 Like</button>
-                    <div style="margin-top: 8px; font-family: sans-serif; font-size: 0.9rem; color: #aaa;">Likes: <span id="like-count">0</span></div>
-                </div>
-                <div style="text-align: center;">
-                    <button id="btn-dislike-vote" style="background: linear-gradient(135deg, #bc4749, #d46565);">👎 Dislike</button>
-                    <div style="margin-top: 8px; font-family: sans-serif; font-size: 0.9rem; color: #aaa;">Dislikes: <span id="dislike-count">0</span></div>
-                </div>
+        <div style="text-align: center;">
+            <button id="btn-dislike-vote" style="background-color: #bc4749;">👎 Dislike</button>
+            <div style="margin-top: 8px; font-family: sans-serif; font-size: 0.9rem; color: #555;">Dislikes: <span id="dislike-count">0</span></div>
+        </div>
+    </div>
+</div>
+            <div id="about-content" style="display: none;">
+                <h2>About</h2>
+                <p>
+                  This is my Multi Genre Project! Me, Matthias made it. The following poems below are poems I wrote! Check them out, and let me know what you think!
+                </p>
             </div>
         </div>
     </main>
 
-    <footer style="text-align: center; margin-top: 50px; padding: 20px; border-top: 2px solid rgba(212,175,55,0.3);">
+    <main class="container">
+        
+        <!-- Poem 1: Blackout Poem -->
+        <section class="poem-card">
+            <h2>1. Blackout Poem</h2>
+            <!-- OWNER: Replace the text inside this div with your source text -->
+            <div class="poem-body">
+              <img src="images/blackout-poem.png"
+              alt="Blackout Poem"
+              class="poem-image">
+            </div>
+            
+            <div class="info-box">
+                <label>Poem Context & Inspiration</label>
+                <!-- OWNER: Replace the text inside this div with your info -->
+                <div class="info-display-box">Type your blackout poem background, inspiration, or analysis right here inside the HTML file.</div>
+            </div>
+        </section>
+
+        <!-- Poem 2: Standard Poem -->
+        <section class="poem-card">
+            <h2>2. Standard Poem</h2>
+            <h2>Matt's Autobiography in Five Short Chapters</h2>
+            <!-- OWNER: Replace the text inside this div with your poem text -->
+            <div class="poem-body">
+           CHAPTER ONE
+I walk down the street.
+           There is a deep hole in the sidewalk.
+	   I fall in.
+            I am lost….I am helpless.
+                        It isn’t my fault.
+I can’t find a way out.
+
+           CHAPTER TWO
+I see a way out. 
+           A long, line of sharp jagged stones imbedded deep into solid dirt.
+            I try to climb it.
+             I fall back in, more injured.
+I keep trying and failing.
+            CHAPTER THREE
+I am injured to the point that I can’t stand.
+           I look at the vertical trial of stony spikes.
+            And now, I sit there.
+             Staring at the stones.
+I’m doomed.
+                   CHAPTER FOUR
+I look the other way.
+           There’s a ladder.
+            I realize I’ve been trying too hard, not knowing there are other ways out.
+             I climb the ladder out.
+I feel stupid.
+CHAPTER FIVE
+As I turn to walk back home, I fall in the hole again, and I facepalm in the pit.</div>
+            
+            <div class="info-box">
+                <label>Poem Context & Inspiration</label>
+                <!-- OWNER: Replace the text inside this div with your info -->
+                <div class="info-display-box">This Poem was inspired by my life, and the way I live. Usually, I make many mistakes and cause accidents. Which is what made me decide to make this poem.</div>
+            </div>
+        </section>
+
+        <!-- Section 3: Extra Things (Full Width) -->
+        <section class="poem-card full-width">
+            <h2>3. Elegy Poem</h2>
+            <h2>The Good Ol' Days</h2>
+            <!-- OWNER: Replace the text inside this div with your extra content -->
+            <div class="poem-body">
+I miss the good old days, when nostalgia was the present.
+I miss the good old days, when the skies were always pleasant.
+I miss the snow in the winters, and Christmas nights.
+I missed the fun in the summers, and trip day sights.
+
+Today, the rain drips down.
+And today, the pressure goes up.
+I ask myself why I feel this way.
+I don’t know, looking at the sky in gray.
+
+Oh, but why do I care? I got friends who like me.
+But outside that, that’s very unlikely.
+I have regrets that hit me hard.
+Stressful days break me into shards.
+
+To this day, I still miss the good old days.
+</div>
+            
+            <div class="info-box">
+                <label>Why I Wrote This</label>
+                <!-- OWNER: Replace the text inside this div with your info -->
+                <div class="info-display-box">This Poem was inspired by my life also. Every year, I feel as if the greater nostalgic times move farther away. I miss the old days when the sun was always out, and I didn't have to do a ton of homework. I missed it when during the summers, I would always go out on a trip with my family. For me, it's hard to stop thinking about it every time it gets in my mind. Nowadays, there's ICE, too much pressure at school, and not much more weekly excitement.</div>
+            </div>
+        </section>
+
+<!-- Additional Poems and Genres Sections -->
+<!-- Section 4: Poem 4 -->
+<section class="poem-card">
+    <h2>GENRE 1</h2>
+    <h3>My Life</h3>
+    <div class="poem-body">
+My Life
+I rise each day to a sky filled with demands,
+With expectation dangling like iron chandeliers,
+swaying over my head with every move.
+
+The school is waiting with its sharpest teeth,
+a castle built from grades, deadlines, and scrutiny.
+Home greets me with another fight,
+Where silence is seen as surrender
+and exhaustion as laziness.
+
+Every day is a battle.
+
+Not for reason, but for voices that grow louder until the argument
+is buried in debris, and I, of course, always lose.
+
+Not because I am wrong,
+Not because their logic is sound,
+
+But because the verdict is rendered
+before my voice is heard.
+
+Words are cut short, dismissed,
+And my sentence is passed
+behind closed doors.
+I become an audience for my own defense.
+
+In the classrooms and at the kitchen table,
+between lectures and accusations,
+I lost a bit more of me.
+
+There are things I love-
+little glimmers in a prolonged winter-
+music, dreams, respites.
+The tender things that confirm my humanity.
+
+But even these are held as collateral.
+
+Every happiness comes with a catch,
+Every enthusiasm with a warning,
+Every quiet moment with a guarantee
+of its impending interruption.
+
+I am begging in my mind for one day.
+
+One day I am not burdened by the weight of their unmet needs for me.
+
+One day without raised voices,
+Without disappointment lurking,
+Without feeling like I owe the world an apology for my existence.
+
+But the days still come, and I push forward.
+
+I walk through the tempest, through skies heavy with unfallen thunder.
+And I clutch a fragile heart that is growing weary from these
+battles, the ones I am never permitted to win.
+
+Even so, in the depths of the despair,
+a spark continues to glow.
+
+Despite the constant rebuttals,
+the arguments, the unbearable weight of the world they lay upon me.
+
+I remain here.
+
+Perhaps this is the only conquest they will ever fail to acquire.
+
+    </div>
+    <div class="info-box">
+        <label>Poem Context & Inspiration</label>
+        <div class="info-display-box">My Life does not have a long break, and on holidays, my parents make me do large amounts of homework. I get yelled at all the time for things I don't know how to explain, and my parents don't let me have much freedom. It's like once your parents don't understand what you're saying, they think you're being an idiot and start yelling at you just because they don't know what you mean. Which is why I just stopped arguing with them. Every time my parents walk down the hallway where my room entrance is, I feel a wave of dread thinking it's about me. And most of the time, it is.</div>
+    </div>
+</section>
+
+<!-- Section 5: Genre Overview -->
+<section class="poem-card">
+    <h2>GENRE 2</h2>
+    <div class="poem-body">
+        <strong>Poetry Genres:</strong><br>
+- Poem About Me & My Life
+- Trivia Game
+- Letter
+    </div>
+    <div class="info-box">
+        <label>About Genres</label>
+        <div class="info-display-box">Different styles and structures of poetry, each conveying emotions uniquely.</div>
+    </div>
+</section>
+
+<!-- Section 6: Texts or Extra Poems -->
+<section class="poem-card">
+    <h2>GENRE 3</h2>
+    <h3>Trivia Game</h3>
+    <a href="https://roppledoxxer.github.io/Trivia/" style="color:DodgerBlue;">Trivia Game!</a>
+    <div class="info-box">
+</section>
+
+    <!-- Footer Section -->
+    <footer>
         <p>&copy; 2026 MGP. All Rights Reserved.</p>
     </footer>
+
+    </main>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             setupVotingSystem();
+            setupBlackoutPoem();
         });
 
-        function setupVotingSystem() {
-            let likes = 0;
-            let dislikes = 0;
+        function setupBlackoutPoem() {
+            const container = document.getElementById("blackout-poem");
+            const originalText = container.textContent.trim();
+            container.innerHTML = ""; 
 
-            const likeVoteBtn = document.getElementById('btn-like-vote');
-            const dislikeVoteBtn = document.getElementById('btn-dislike-vote');
-            const likeCountSpan = document.getElementById('like-count');
-            const dislikeCountSpan = document.getElementById('dislike-count');
+            // Split text into words to make them individually clickable
+            const words = originalText.split(/\s+/);
+            
+            words.forEach((word) => {
+                const span = document.createElement("span");
+                span.classList.add("blackout-word");
+                span.textContent = word + " ";
+                
+                // Toggle blackout state on click
+                span.addEventListener("click", () => {
+                    span.classList.toggle("revealed");
+                });
 
-            likeVoteBtn.addEventListener('click', () => {
-                likes++;
-                likeCountSpan.textContent = likes;
-            });
-
-            dislikeVoteBtn.addEventListener('click', () => {
-                dislikes++;
-                dislikeCountSpan.textContent = dislikes;
+                container.appendChild(span);
             });
         }
+
+        const likeButton = document.getElementById('like-button');
+        const aboutButton = document.getElementById('about-button');
+        const likeContent = document.getElementById('like-content');
+        const aboutContent = document.getElementById('about-content');
+
+        likeButton.addEventListener('click', () => {
+            likeContent.style.display = 'block';
+            aboutContent.style.display = 'none';
+        });
+
+        aboutButton.addEventListener('click', () => {
+            likeContent.style.display = 'none';
+            aboutContent.style.display = 'block';
+        });
+
+function setupVotingSystem() {
+    let likes = 0;
+    let dislikes = 0;
+
+    const likeVoteBtn = document.getElementById('btn-like-vote');
+    const dislikeVoteBtn = document.getElementById('btn-dislike-vote');
+    const likeCountSpan = document.getElementById('like-count');
+    const dislikeCountSpan = document.getElementById('dislike-count');
+
+    likeVoteBtn.addEventListener('click', () => {
+        likes++;
+        likeCountSpan.textContent = likes;
+    });
+
+    dislikeVoteBtn.addEventListener('click', () => {
+        dislikes++;
+        dislikeCountSpan.textContent = dislikes;
+    });
+}
+
     </script>
 </body>
 </html>
+
+
